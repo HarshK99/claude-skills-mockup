@@ -415,27 +415,24 @@ export default function Home() {
                 )}
 
                 {(phase === 'created' || phase === 'done') && (
-                  <div>
-                    <p className="text-[14px] text-gray-500 leading-relaxed">
-                      The instruction was created.{' '}
+                  <div className="flex items-center gap-2 text-[13px] text-gray-500">
+                    <span>The instruction was created.</span>
+                    <button
+                      onClick={() => setReviewOpen(true)}
+                      className="font-semibold text-gray-800 border border-gray-300 hover:border-gray-400 rounded-md px-2.5 py-0.5 transition-colors hover:bg-gray-50"
+                    >
+                      Review
+                    </button>
+                    {phase === 'created' ? (
                       <button
-                        onClick={() => setReviewOpen(true)}
-                        className="text-gray-800 font-medium underline underline-offset-2 decoration-gray-300 hover:decoration-gray-600 transition-colors"
+                        onClick={handleSave}
+                        className="font-semibold text-gray-800 border border-gray-300 hover:border-gray-400 rounded-md px-2.5 py-0.5 transition-colors hover:bg-gray-50"
                       >
-                        Review
+                        Save it
                       </button>
-                      {'  '}
-                      {phase === 'created' ? (
-                        <button
-                          onClick={handleSave}
-                          className="text-gray-800 font-medium underline underline-offset-2 decoration-gray-300 hover:decoration-gray-600 transition-colors"
-                        >
-                          Save it
-                        </button>
-                      ) : (
-                        <span className="text-green-600 font-medium">Saved ✓</span>
-                      )}
-                    </p>
+                    ) : (
+                      <span className="text-green-600 font-medium">Saved ✓</span>
+                    )}
                   </div>
                 )}
               </div>
