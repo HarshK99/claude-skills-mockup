@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Claude Skills",
   description: "Prototype for new feature to help users with deciding when to use Claude skill.",
   icons: {
-    icon: '/logo.png', // Path relative to the /public folder
+    icon: '/logo.png',
     apple: '/logo.png',
   },
 };
